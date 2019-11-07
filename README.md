@@ -21,7 +21,7 @@ https://ninjamock.com/s/VLLXCFx
 
 ## Priority Matrix
 
-https://www.lucidchart.com/invitations/accept/81e3906c-be48-4a55-abab-1afc13f5f5f9
+[a relative link](readme-assets/ParentHelperPrioMrtx.pdf)
 
 ### MVP/PostMVP - 5min
 
