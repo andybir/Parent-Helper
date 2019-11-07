@@ -21,11 +21,9 @@ https://ninjamock.com/s/VLLXCFx
 
 ## Priority Matrix
 
-file:///Users/abirosak/Downloads/ParentHelperPrioMrtx.pdf
+https://www.lucidchart.com/invitations/accept/81e3906c-be48-4a55-abab-1afc13f5f5f9
 
 ### MVP/PostMVP - 5min
-
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
 
 #### MVP 
 
@@ -74,20 +72,13 @@ Based on the initial logic defined in the previous sections try and breakdown th
 ## Helper Functions
 Helper functions should be generic enought that they can be reused in other applications. Use this section to document all helper functions that fall into this category.
 
-#### SAMPLE.....
 | Function | Description | 
 | --- | :---: |  
-| Capitalize | This will capitalize the first letter in a string of text | 
 
 ## Additional Libraries
- Use this section to list all supporting libraries and thier role in the project. 
  
- #### SAMPLE.....
 | Library | What it Does | 
 | --- | :---: |  
-| Bootstrap | Used to help style my application | 
-| Giphy API | Used to get gifs to use | 
-
 
 ## Code Snippet
 
