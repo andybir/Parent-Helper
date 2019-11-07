@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     def show
         begin
             @user = User.find(params[:id])
-            render json: { message: "ok", user: @user}
+            render json: @user.to_json(:include => {:posts => { :only => [:title, :content] }})
         rescue ActiveRecord::RecordNotFound
             render json: { message: "No user matches that ID" }, status: 404
         rescue StandardError => e
