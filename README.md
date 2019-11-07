@@ -21,7 +21,7 @@ https://ninjamock.com/s/VLLXCFx
 
 ## Priority Matrix
 
-[a relative link](readme-assets/ParentHelperPrioMrtx.pdf)
+[Parent Helper Priority Matrix](readme-assets/ParentHelperPrioMrtx.pdf)
 
 ### MVP/PostMVP - 5min
 
@@ -37,10 +37,11 @@ https://ninjamock.com/s/VLLXCFx
 
 ## Architectural Design
 
-https://www.lucidchart.com/invitations/accept/925e1a5a-7fa5-412a-8925-d817683031ad
+[Parent Helper Component Hierarchy](readme-assets/ParentHelperCompHier.pdf) 
 
 ## ERD
-https://www.lucidchart.com/publicSegments/view/56818b3c-0100-4440-a418-012cc195d4d3
+
+[Parent Helper ERD](readme-assets/ParentHelperERD&#32;(1).pdf)
 
 ## UI Components
 
