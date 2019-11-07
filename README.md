@@ -21,6 +21,8 @@ https://ninjamock.com/s/VLLXCFx
 
 ## Priority Matrix
 
+file:///Users/abirosak/Downloads/ParentHelperPrioMrtx.pdf
+
 ### MVP/PostMVP - 5min
 
 The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
@@ -36,13 +38,12 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 - create new topics (admin will create all topics for MVP)
 
 ## Architectural Design
-```
-https://www.lucidchart.com/publicSegments/view/c36997da-9c61-49f4-b9d3-7cdcb601a587
-```
+
+https://www.lucidchart.com/invitations/accept/925e1a5a-7fa5-412a-8925-d817683031ad
+
 ## ERD
-```
 https://www.lucidchart.com/publicSegments/view/56818b3c-0100-4440-a418-012cc195d4d3
-```
+
 ## UI Components
 
 Based on the initial logic defined in the previous sections try and breakdown the logic further into stateless/stateful components. 
