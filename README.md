@@ -34,14 +34,15 @@ https://ninjamock.com/s/VLLXCFx
 
 - Search for topics
 - create new topics (admin will create all topics for MVP)
+- auth
 
 ## Architectural Design
 
-[Parent Helper Component Hierarchy](readme-assets/ParentHelperCompHier.pdf) 
+[Parent Helper Component Hierarchy](readme-assets/ParentHelperCompHier&#32;(2).pdf) 
 
 ## ERD
 
-[Parent Helper ERD](readme-assets/ParentHelperERD&#32;(1).pdf)
+[Parent Helper ERD](readme-assets/ParentHelperERD&#32;(2).pdf)
 
 ## UI Components
 
@@ -79,7 +80,7 @@ Helper functions should be generic enought that they can be reused in other appl
 ## Additional Libraries
  
 | Library | What it Does | 
-| --- | :---: |  
+| semantic-ui-react | :---: |  
 
 ## Code Snippet
 
