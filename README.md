@@ -16,12 +16,10 @@
 Parent Helper is a resources for parents living in NYC where other parents can recommend activites, handymen, local news and parenting advice.
 
 ## Wireframes
-```
-https://ninjamock.com/s/VLLXCFx
-```
-## Priority Matrix
 
-Include a full list of features that have been prioritized based on the `Time and Importance` Matix.  
+https://ninjamock.com/s/VLLXCFx
+
+## Priority Matrix
 
 ### MVP/PostMVP - 5min
 
