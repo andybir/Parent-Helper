@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import Home from './components/Home'
 import AllTopics from './components/AllTopics'
 import ShowTopic from './components/ShowTopic'
 import './App.css';
@@ -35,11 +36,12 @@ class App extends Component {
     return (
       <Router>
         <div className="App">
-          <Link exact='true' to='/'>
+          {/* <Link exact='true' to='/'>
             Parent Helper
-          </Link>
+          </Link> */}
           <Switch>
-            <Route exact path='/' render={() => (
+            <Route exact path='/' component={Home} />
+            <Route exact path='/topics' render={() => (
               <AllTopics
               getAllTopics={this.getAllTopics}
               topics={this.state.topics}

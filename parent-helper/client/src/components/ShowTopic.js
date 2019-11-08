@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 class ShowTopic extends Component {
     constructor(props) {
@@ -19,10 +20,10 @@ class ShowTopic extends Component {
 
     render() {
         const topic = this.props.currentTopic
-        console.log(topic)
+        console.log(this.props.topic)
         return (
             <div>
-                {/* <h1>{topic.subject}</h1> */}
+                <h1>{topic.subject}</h1>
             </div>
         )
     }

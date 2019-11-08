@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 class AllTopics extends Component {
 
@@ -15,7 +15,7 @@ class AllTopics extends Component {
         console.log(this.props.topics)
         return this.props.topics.map(topic => (
             <div key={topic.id}>
-                <Link to={`/topics/${topic.id}`} onClick={() => this.props.setTopic(topic)}><h2>{topic.subject}</h2>{topic.description}</Link>
+                <Link to={`/topics/${topic.id}`} onClick={() => this.props.setTopic(topic)}><h2>{topic.subject}</h2><p>{topic.description}</p></Link>
                 <hr />
             </div>
         ))
