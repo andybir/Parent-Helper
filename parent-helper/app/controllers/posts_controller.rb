@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     def show
         begin
             @post = Post.find(params[:id])
-            render json: { message: "ok", post: @post }
+            render json: @post.to_json(:include => { :comments => { :only => [:title, :content] }})
         rescue ActiveRecord::RecordNotFound
             render json: { message: "No post matches that ID" }, status: 404
         rescue StandardError => e
