@@ -8,11 +8,14 @@ class AllTopics extends Component {
             this.props.getAllTopics()
         }
     }
+    
+
 
     render () {
+        console.log(this.props.topics)
         return this.props.topics.map(topic => (
             <div key={topic.id}>
-                <Link to={`/topics/${topic.id}`} onClick={() => this.props.setTopic(topic)}>Browse Topics</Link>
+                <Link to={`/topics/${topic.id}`} onClick={() => this.props.setTopic(topic)}><h2>{topic.subject}</h2>{topic.description}</Link>
                 <hr />
             </div>
         ))
