@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import AllTopics from './components/AllTopics'
 import './App.css';
 
 class App extends Component {
