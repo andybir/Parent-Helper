@@ -12,6 +12,8 @@ class App extends Component {
     this.state = {
       topics: [],
       currentTopic: {},
+      posts: [],
+      currentPost: {},
       topicLoaded: false
     }
   }
@@ -33,6 +35,8 @@ class App extends Component {
 
 
   render () {
+    console.log(this.state.posts)
+
     return (
       <Router>
         <div className="App">
@@ -49,8 +53,11 @@ class App extends Component {
               setTopic={this.setTopic} />
             )} />
             <Route exact path = '/topics/:id' render={(props) => <ShowTopic
+            getAllTopics={this.getAllTopics}
+              topics={this.state.topics}
               currentTopic={this.state.currentTopic}
               setTopic={this.setTopic}
+              posts={this.state.posts}
               {...props} />
             } />
           </Switch>
