@@ -12,7 +12,7 @@ class AllTopics extends Component {
 
 
     render () {
-        // console.log(this.props.topics)
+        console.log(this.props.topics)
         return this.props.topics.map(topic => (
             <div key={topic.id}>
                 <Link to={`/topics/${topic.id}`} 

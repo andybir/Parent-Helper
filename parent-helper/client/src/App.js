@@ -52,14 +52,16 @@ class App extends Component {
               topicsLoaded={this.state.topicsLoaded}
               setTopic={this.setTopic} />
             )} />
-            <Route exact path = '/topics/:id' render={(props) => <ShowTopic
+            <Route exact path = '/topics/:id' render={(props) => {
+            return <ShowTopic
+            data={props}
             getAllTopics={this.getAllTopics}
               topics={this.state.topics}
               currentTopic={this.state.currentTopic}
               setTopic={this.setTopic}
               posts={this.state.posts}
               {...props} />
-            } />
+            }}/>
           </Switch>
         </div>
       </Router>
