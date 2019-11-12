@@ -9,7 +9,7 @@ import './App.css';
 
 class App extends Component {
   constructor(props) {
-    super()
+    super(props)
     this.state = {
       topics: [],
       currentTopic: {},
@@ -69,11 +69,18 @@ class App extends Component {
               posts={this.state.posts}
               {...props} />
             }}/>
-            <Route exact path='topics/:id/posts/:id' render={(props) => {
+            <Route exact path='/topics/:id/posts/:id' render={(props) => {
               return <ShowPost
-                data={props}
-                currentPost={currentPost}
-              />
+                // data={props}
+                // getAllTopics={this.getAllTopics}
+                // topics={this.state.topics}
+                // currentTopic={this.state.currentTopic}
+                // setTopic={this.setTopic}
+                // setPost={this.setPost}
+                // posts={this.state.posts}
+                // currentPost={currentPost}
+                // {...props} 
+                />
             }} />
           </Switch>
         </div>

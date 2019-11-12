@@ -29,10 +29,10 @@ class ShowTopic extends Component {
     //   }
 
     render() {
-        // console.log(this.state.topic)
+        console.log(this.state.topic)
         const topic = this.state.topic
         const posts = this.state.topic.posts
-        console.log(this.state.topic.id)
+        // console.log(this.state.topic.id)
         return (
             <div>
                 <h1>{topic.subject}</h1>
