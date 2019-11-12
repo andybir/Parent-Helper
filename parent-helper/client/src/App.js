@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Home from './components/Home'
 import AllTopics from './components/AllTopics'
 import ShowTopic from './components/ShowTopic'
+import ShowPost from './components/ShowPost'
 import './App.css';
 
 class App extends Component {
@@ -33,6 +34,11 @@ class App extends Component {
     })
   }
 
+  setPost = (post) => {
+    this.setState({
+      currentPost: post
+    })
+  }
 
   render () {
     console.log(this.state.posts)
@@ -47,21 +53,28 @@ class App extends Component {
             <Route exact path='/' component={Home} />
             <Route exact path='/topics' render={() => (
               <AllTopics
-              getAllTopics={this.getAllTopics}
-              topics={this.state.topics}
-              topicsLoaded={this.state.topicsLoaded}
-              setTopic={this.setTopic} />
+                getAllTopics={this.getAllTopics}
+                topics={this.state.topics}
+                topicsLoaded={this.state.topicsLoaded}
+                setTopic={this.setTopic} />
             )} />
             <Route exact path = '/topics/:id' render={(props) => {
             return <ShowTopic
-            data={props}
-            getAllTopics={this.getAllTopics}
+              data={props}
+              getAllTopics={this.getAllTopics}
               topics={this.state.topics}
               currentTopic={this.state.currentTopic}
               setTopic={this.setTopic}
+              setPost={this.setPost}
               posts={this.state.posts}
               {...props} />
             }}/>
+            <Route exact path='topics/:id/posts/:id' render={(props) => {
+              return <ShowPost
+                data={props}
+                currentPost={currentPost}
+              />
+            }} />
           </Switch>
         </div>
       </Router>

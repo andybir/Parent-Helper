@@ -3,8 +3,8 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 class ShowTopic extends Component {
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
         this.state = {
             topic: {}
         }
@@ -29,37 +29,24 @@ class ShowTopic extends Component {
     //   }
 
     render() {
-
         // console.log(this.state.topic)
         const topic = this.state.topic
         const posts = this.state.topic.posts
-
-        console.log(this.state.topic.posts)
-        // console.log(post[0])
-        // return (
-        //     <div>
-        //         <h1>{topic.subject}</h1>
-        //         {posts && posts.map(post => (
-        //             <div key={post.id}>
-        //                 <h2>{post.title}</h2>
-        //                 <p>{post.content}</p>      
-        //             </div>
-        //         ))}
-        //         {/* ) <h2 key={post.id}>{post.title}</h2>)}
-        //          {posts && posts.map(post => <p key={post.id}>{post.content}</p>)} */}
-        //     </div>
+        console.log(this.state.topic.id)
         return (
             <div>
                 <h1>{topic.subject}</h1>
                 {posts && posts.map(post => (
-                    <div key={post.id}>
-                        <h2>{post.title}</h2>
-                        <p>{post.content}</p>      
-                    </div>
+                <div key={post.id}>
+                    <Link to={`/topics/${topic.id}/posts/${post.id}`}
+                        onClick={() => this.props.setPost(post)}>
+                    <h2>{post.title}</h2>
+                    <p>{post.content}</p>      
+                    </Link>
+                </div>
                 ))}
-                
-            </div>)
-        
+            </div>
+        )
     }
 }
 
