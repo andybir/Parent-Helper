@@ -31,17 +31,35 @@ class ShowTopic extends Component {
     render() {
 
         // console.log(this.state.topic)
-        // const topic = this.state.topic
-        // const posts = this.state.topic.posts
+        const topic = this.state.topic
+        const posts = this.state.topic.posts
 
         console.log(this.state.topic.posts)
         // console.log(post[0])
+        // return (
+        //     <div>
+        //         <h1>{topic.subject}</h1>
+        //         {posts && posts.map(post => (
+        //             <div key={post.id}>
+        //                 <h2>{post.title}</h2>
+        //                 <p>{post.content}</p>      
+        //             </div>
+        //         ))}
+        //         {/* ) <h2 key={post.id}>{post.title}</h2>)}
+        //          {posts && posts.map(post => <p key={post.id}>{post.content}</p>)} */}
+        //     </div>
         return (
             <div>
-                <h1>{}</h1>
-                {this.state.topic.posts && this.state.topic.posts.map(post => <h2 key={post.id}>{post.title}</h2>)}
-            </div>
-        )
+                <h1>{topic.subject}</h1>
+                {posts && posts.map(post => (
+                    <div key={post.id}>
+                        <h2>{post.title}</h2>
+                        <p>{post.content}</p>      
+                    </div>
+                ))}
+                
+            </div>)
+        
     }
 }
 
