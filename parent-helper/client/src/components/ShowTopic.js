@@ -18,6 +18,7 @@ class ShowTopic extends Component {
             console.log(this.props.match.params.id)
             const topicData = await axios(`http://localhost:3000/topics/${this.props.data.match.params.id}`)
             this.setState(this.state.topic = topicData.data)
+            console.log(topicData)
         }
 
     }

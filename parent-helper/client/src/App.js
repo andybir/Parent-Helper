@@ -35,6 +35,7 @@ class App extends Component {
   }
 
   setPost = (post) => {
+    console.log("checking for post: ", post)
     this.setState({
       currentPost: post
     })
@@ -71,6 +72,15 @@ class App extends Component {
             }}/>
             <Route exact path='/topics/:id/posts/:id' render={(props) => {
               return <ShowPost
+              data={props}
+              getAllTopics={this.getAllTopics}
+              topics={this.state.topics}
+              currentTopic={this.state.currentTopic}
+              currentPost={this.state.currentPost}
+              setTopic={this.setTopic}
+              setPost={this.setPost}
+              posts={this.state.posts}
+              {...props}
                 // data={props}
                 // getAllTopics={this.getAllTopics}
                 // topics={this.state.topics}
