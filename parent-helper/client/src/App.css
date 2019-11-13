@@ -28,3 +28,7 @@
   flex-direction: column;
   align-items: center;
 }
+
+.comment-box {
+  width: 500px;
+}

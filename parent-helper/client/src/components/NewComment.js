@@ -18,8 +18,21 @@ class NewComment extends Component {
     constructor() {
         super()
         this.state = {
-
+            value: ''
         }
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            value: e.target.value
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+        this.setState({
+
+        })
     }
 
     // const useStyles = makeStyles(theme => ({
@@ -38,15 +51,23 @@ class NewComment extends Component {
         return (
             <div>
                 <TextField
-          id="outlined-multiline-static"
-          label="Multiline"
-          multiline
-          rows="4"
-          defaultValue="Default Value"
-        //   className={classes.textField}
-          margin="normal"
-          variant="outlined"
-        />
+                    id="outlined-multiline-static"
+                    label="Comment"
+                    multiline
+                    rows="4"
+                    defaultValue="Add a comment..."
+                    className='comment-box'
+                    margin="normal"
+                    variant="outlined"
+                />
+                <div className='comment-buttons'>
+                    <Button>
+                        Submit
+                    </Button>
+                    <Button>
+                        Cancel
+                    </Button>
+                </div>
             </div>
         )
     }
