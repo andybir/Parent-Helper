@@ -6,6 +6,7 @@ import AllTopics from './components/AllTopics'
 import ShowTopic from './components/ShowTopic'
 import ShowPost from './components/ShowPost'
 import Nav from './components/Nav'
+
 import './App.css';
 
 class App extends Component {
@@ -49,11 +50,15 @@ class App extends Component {
     })
   }
 
+  
+
   render () {
     console.log(this.state.posts)
-
+    
     return (
+
       <Router>
+
         <Nav />
         <div className="App">
           {/* <Link exact='true' to='/'>
@@ -103,7 +108,9 @@ class App extends Component {
             }} />
           </Switch>
         </div>
+
       </Router>
+
     )
   }
 }
