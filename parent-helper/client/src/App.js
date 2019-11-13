@@ -16,7 +16,8 @@ class App extends Component {
       currentTopic: {},
       posts: [],
       currentPost: {},
-      topicLoaded: false
+      topicLoaded: false,
+      currentComment: {}
     }
   }
 
@@ -39,6 +40,12 @@ class App extends Component {
     console.log("checking for post: ", post)
     this.setState({
       currentPost: post
+    })
+  }
+
+  setComment = (comment) => {
+    this.setState({
+      currentComment: comment
     })
   }
 

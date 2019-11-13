@@ -37,7 +37,9 @@ class ShowPost extends Component {
                     <p>{comment.content}</p>
                     </div>    
                 ))}
-                <NewComment />
+                <NewComment
+                currentPost={post.id} 
+                 />
             </div>
         )
     }
