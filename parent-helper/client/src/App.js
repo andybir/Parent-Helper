@@ -5,6 +5,7 @@ import Home from './components/Home'
 import AllTopics from './components/AllTopics'
 import ShowTopic from './components/ShowTopic'
 import ShowPost from './components/ShowPost'
+import Nav from './components/Nav'
 import './App.css';
 
 class App extends Component {
@@ -46,6 +47,7 @@ class App extends Component {
 
     return (
       <Router>
+        <Nav />
         <div className="App">
           {/* <Link exact='true' to='/'>
             Parent Helper
