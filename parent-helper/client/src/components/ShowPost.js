@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import NewComment from './NewComment'
 
 class ShowPost extends Component {
     constructor() {
@@ -36,7 +37,7 @@ class ShowPost extends Component {
                     <p>{comment.content}</p>
                     </div>    
                 ))}
-                
+                <NewComment />
             </div>
         )
     }
