@@ -33,7 +33,8 @@ class ShowPost extends Component {
                 <h2>{post.content}</h2>
                 {comment.map(comment => (
                     <div className='comment' key={comment.id}>
-                    <h3>{comment.title}</h3>
+                    <h3>{`On ${comment.created_at}`}</h3>
+                    <h3>{`${comment.title} wrote:`}</h3>
                     <p>{comment.content}</p>
                     </div>    
                 ))}

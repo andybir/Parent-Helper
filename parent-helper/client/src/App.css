@@ -62,6 +62,12 @@ a:active {
   background-color: rgb(218, 184, 132);
 }
 
+.home-img {
+  border: solid red 10px;
+  border-radius: 15px;
+  width: 80%;
+}
+
 /* MAIN COMPONENTS */
 .all-topics, .show-topic, .show-post {
   display: flex;
@@ -95,12 +101,17 @@ a:active {
 }
 
 .comment-container {
-  /* background-color: rgb(152, 223, 117);
-  margin: 0px;
-  padding: 5px; */
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.name-box {
+  width: 500px;
 }
 
 .comment-box {
+  width: 500px;
 
 }
 
@@ -108,6 +119,45 @@ a:active {
 
 }
 
-.comment-box {
-  width: 500px;
+@media screen and (max-width: 415px) {
+  .home {
+    height: 75vmax;
+  }
+  
+  .nav {
+    font-size: 20px;
+  }
+  
+  .all-topics, .show-topic, .show-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: rgb(218, 184, 132);
+    height: auto;
+
+  }
+
+  .topic-click {
+    background-color: rgb(240, 135, 202);
+    padding: 5px;
+    border: 2px solid;
+    width: 90%;
+  }
+  
+  .post-click {
+    background-color: rgb(240, 135, 202);
+    padding: 5px;
+    margin: 10px;
+    border: 2px solid;
+    width: 90%;
+  }
+  
+  .comment {
+    background-color: rgb(240, 135, 202);
+    padding: 5px;
+    margin: 10px;
+    border: 2px solid;
+    width: 90%;
+  }
 }

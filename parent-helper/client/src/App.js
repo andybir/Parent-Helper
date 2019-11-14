@@ -64,6 +64,7 @@ class App extends Component {
             Parent Helper
           </Link> */}
           <Switch>
+          <main>
             <Route exact path='/' component={Home} />
             <Route exact path='/topics' render={() => (
               <AllTopics
@@ -105,6 +106,7 @@ class App extends Component {
                 // {...props} 
                 />
             }} />
+            </main>
           </Switch>
         </div>
             <Footer />
