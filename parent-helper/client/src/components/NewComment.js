@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios'
 import Button from '@material-ui/core/Button';
 import { useAlert } from 'react-alert'
@@ -10,51 +10,43 @@ import { useAlert } from 'react-alert'
 // import Input from '@material-ui/core/Input'
 // import FormHelperText from '@material-ui/core/FormHelperText'
 import TextField from '@material-ui/core/TextField'
-// import Dialog from '@material-ui/core/Dialog';
-// import DialogActions from '@material-ui/core/DialogActions';
-// import DialogContent from '@material-ui/core/DialogContent';
-// import DialogContentText from '@material-ui/core/DialogContentText';
-// import DialogTitle from '@material-ui/core/DialogTitle';
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
 import { makeStyles } from '@material-ui/core/styles';
 
 
 
 
-class NewComment extends Component {
-    constructor(props) {
-        super(props)
-        this.state = {
-            value: '',
-            open: false,
-            setOpen: false
-        }
-    }
-
-    handleClickOpen = () => {
-        this.setState({
-            setOpen: true
-
-        })
-      };
+function NewComment (props) {
+    const [value] = useState('')
+    const [open, setOpen] = useState(false)
+    const [formValue, setFormValue] = useState({})
     
-    handleClose = () => {
-        this.setState({
-            setOpen:false
+    const alert = useAlert()
 
-        })
-      };
 
-    handleChange = (e) => {
-        this.setState({
-            postId: this.props.currentPost,
+    const handleClickOpen = () => {
+        setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+    const handleChange = (e) => {
+        setFormValue({
+            postId: props.currentPost,
             content: e.target.value
-        })
+        }) 
     }
 
-    onSubmit = async (e) => {
+    const onSubmit = async (e) => {
         e.preventDefault()
-        alert("Comment submitted!")
-        const res = await axios.post(`http://localhost:3000/posts/${this.props.currentPost}/comments`, this.state)
+        // alert("Comment submitted!")
+        const res = await axios.post(`http://localhost:3000/posts/${props.currentPost}/comments`, formValue)
 
         const comment = res.data.comment
         // window.location = "http://www.google.com"
@@ -63,31 +55,31 @@ class NewComment extends Component {
         // this.props.setComment(comment)
     }
 
-    // const useStyles = makeStyles(theme => ({
-    //     container: {
-    //       display: 'flex',
-    //       flexWrap: 'wrap',
-    //     },
-    //     textField: {
-    //       marginLeft: theme.spacing(1),
-    //       marginRight: theme.spacing(1),
-    //       width: 200,
-    //     },
-    //   }));
+    const useStyles = makeStyles(theme => ({
+        container: {
+          display: 'flex',
+          flexWrap: 'wrap',
+        },
+        textField: {
+          marginLeft: theme.spacing(1),
+          marginRight: theme.spacing(1),
+          width: 200,
+        },
+      }));
     
 
-    render() {
+    
         return (
-            <div className='new-comment'>
-                <form onSubmit={this.onSubmit}>
+            <div className='comment-container'>
+                <form onSubmit={onSubmit}>
                     {/* <textarea 
                         value={this.state.content}
                         onChange={this.handleChange}
                         className='comment-box'
                     /> */}
                     <TextField
-                        value={this.state.content}
-                        onChange={this.handleChange}
+                        value={formValue.content}
+                        onChange={handleChange}
                         id="outlined-multiline-static"
                         label="Comment"
                         multiline
@@ -97,37 +89,39 @@ class NewComment extends Component {
                         margin="normal"
                         variant="outlined"
                     />
-                    <div className='comment-buttons'>
-                        <Button type='submit' onSubmit={this.handleClickOpen}>
+                    {/* <div className='comment-buttons'> */}
+                        <Button type='submit' onClick={() => {
+        alert.show('Oh look, an alert!')
+      }} onSubmit={handleClickOpen}>
                             Submit
                         </Button>
-                        {/* <Dialog
-        open={this.state.open}
-        onClose={this.handleClose}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
-        <DialogContent>
-          <DialogContentText id="alert-dialog-description">
-            Let Google help apps determine location. This means sending anonymous location data to
-            Google, even when no apps are running.
-          </DialogContentText>
-        </DialogContent>
-        <DialogActions>
-          <Button onClick={this.handleClose} color="primary">
-            Disagree
-          </Button>
-          <Button onClick={this.handleClose} color="primary" autoFocus>
-            Agree
-          </Button>
-        </DialogActions>
-      </Dialog> */}
-                    </div>
+            <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+            >
+            <DialogTitle id="alert-dialog-title">{"Use Google's location service?"}</DialogTitle>
+            <DialogContent>
+            <DialogContentText id="alert-dialog-description">
+                Let Google help apps determine location. This means sending anonymous location data to
+                Google, even when no apps are running.
+            </DialogContentText>
+            </DialogContent>
+            <DialogActions>
+            <Button onClick={handleClose} color="primary">
+                Disagree
+            </Button>
+            <Button onClick={handleClose} color="primary" autoFocus>
+                Agree
+            </Button>
+            </DialogActions>
+            </Dialog>
+                    {/* </div> */}
                 </form>
-            </div>
+            // </div>
         )
-    }
+    
 }
 
 export default NewComment
