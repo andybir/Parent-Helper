@@ -57,8 +57,9 @@ class NewComment extends Component {
         const res = await axios.post(`http://localhost:3000/posts/${this.props.currentPost}/comments`, this.state)
 
         const comment = res.data.comment
+        // window.location = "http://www.google.com"
         
-        
+
         // this.props.setComment(comment)
     }
 
@@ -91,15 +92,15 @@ class NewComment extends Component {
                         label="Comment"
                         multiline
                         rows="4"
-                        // defaultValue="Add a comment..."
+                        placeholder="Add a comment..."
                         className='comment-box'
                         margin="normal"
                         variant="outlined"
                     />
                     <div className='comment-buttons'>
-                        <button onSubmit={this.handleClickOpen}>
+                        <Button type='submit' onSubmit={this.handleClickOpen}>
                             Submit
-                        </button>
+                        </Button>
                         {/* <Dialog
         open={this.state.open}
         onClose={this.handleClose}
