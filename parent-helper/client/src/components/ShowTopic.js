@@ -15,10 +15,10 @@ class ShowTopic extends Component {
         // console.log(this.props)
 
         if (this.props.currentTopic.id !== idParams) {
-            console.log(this.props.match.params.id)
-            const topicData = await axios(`http://localhost:3000/topics/${this.props.data.match.params.id}`)
+            const topicId = this.props.data.match.params.id
+            const topicData = await axios(`http://localhost:3000/topics/${topicId}`)
             this.setState(this.state.topic = topicData.data)
-            console.log(topicData)
+            // console.log(topicData)
         }
 
     }
