@@ -10,25 +10,27 @@ import TextField from '@material-ui/core/TextField'
 import { makeStyles } from '@material-ui/core/styles';
 
 function NewComment (props) {
-    const [formValue, setFormValue] = useState({})
+    const [formValue, setFormValue] = useState('')
+    const [nameValue, setNameValue] = useState('')
     
     const alert = useAlert()
 
-    const handleChange = (e) => {
-        setFormValue({
-            postId: props.currentPost,
-            content: e.target.value
-        }) 
+    const componentDidMount = async () => {
+        
     }
 
     const onSubmit = async (e) => {
         e.preventDefault()
         // alert("Comment submitted!")
-        const res = await axios.post(`http://localhost:3000/posts/${props.currentPost}/comments`, formValue)
+        const res = await axios.post(`http://localhost:3000/posts/${props.currentPost}/comments`, {title: nameValue, content: formValue})
 
-        const comment = res.data.comment
+        
+
+        // const comment = res.data.comment
         // window.location = "http://www.google.com"
         // this.props.setComment(comment)
+        console.log(nameValue)
+        console.log(formValue)
     }
 
     const useStyles = makeStyles(theme => ({
@@ -46,7 +48,10 @@ function NewComment (props) {
         return (
             <div className='comment-container'>
                 <form onSubmit={onSubmit}>
-                    <TextField 
+                    <TextField
+                        value={nameValue}
+                        name='name'
+                        onChange={(e) => setNameValue(e.target.value)}
                         label='Name'
                         placeholder='Name'
                         className='name-box'
@@ -54,8 +59,9 @@ function NewComment (props) {
                         variant='outlined'
                     />
                     <TextField
-                        value={formValue.content}
-                        onChange={handleChange}
+                        value={formValue}
+                        name='comment'
+                        onChange={(e) => setFormValue(e.target.value)}
                         label="Comment"
                         multiline
                         rows="4"

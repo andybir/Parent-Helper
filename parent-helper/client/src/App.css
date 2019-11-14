@@ -132,25 +132,34 @@ a:active {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     padding: 20px;
     background-color: rgb(218, 184, 132);
     height: auto;
 
   }
 
-  .topic-click {
-    background-color: rgb(240, 135, 202);
-    padding: 5px;
-    border: 2px solid;
-    width: 90%;
-  }
-  
-  .post-click {
+  .topic-click, .post-click {
     background-color: rgb(240, 135, 202);
     padding: 5px;
     margin: 10px;
     border: 2px solid;
     width: 90%;
+  }
+
+  .home-links {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  .home-click {
+    background-color: rgb(240, 135, 202);
+    padding: 5px;
+    margin: 10px;
+    border: 2px solid;
+    border-radius: 8px;
+    /* width: 90%; */
+    /* align-content: center; */
   }
   
   .comment {
@@ -159,5 +168,13 @@ a:active {
     margin: 10px;
     border: 2px solid;
     width: 90%;
+  }
+
+  .name-box {
+    width: 90%;
+  }
+
+  .comment-box {
+    width: 90%
   }
 }
