@@ -10,7 +10,14 @@ class TopicsController < ApplicationController
             @topic = Topic.find(params[:id])
             # @posts = Post.all(topic_id)
             # render json: @posts
-            render json: @topic.to_json(:include => { :posts => { :only => [:title, :content] }})
+            render json: @topic.to_json(:include => { 
+                :posts => { 
+                    :only => [:id, :title, :content], :include => {
+                        :comments => {
+                            :only => [:id, :title, :content]}
+                    }
+                }
+            })
         rescue ActiveRecord::RecordNotFound
             render json: { message: "No topic matches that ID" }, status: 404
         rescue StandardError => e
