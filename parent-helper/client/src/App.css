@@ -23,10 +23,20 @@
   color: #09d3ac;
 }
 
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
 .nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(161, 161, 247);
 }
 
 .comment-box {
