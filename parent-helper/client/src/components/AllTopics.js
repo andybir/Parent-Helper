@@ -14,13 +14,13 @@ class AllTopics extends Component {
     render () {
         console.log(this.props.topics)
         return this.props.topics.map(topic => (
-            <div key={topic.id}>
+            <div className='all-topics' key={topic.id}>
                 <Link to={`/topics/${topic.id}`} 
                     onClick={() => this.props.setTopic(topic)}>
                     <h2>{topic.subject}</h2>
                     <p>{topic.description}</p>
                 </Link>
-                <hr />
+                {/* <hr /> */}
             </div>
         ))
     }

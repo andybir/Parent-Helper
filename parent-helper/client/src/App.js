@@ -6,7 +6,7 @@ import AllTopics from './components/AllTopics'
 import ShowTopic from './components/ShowTopic'
 import ShowPost from './components/ShowPost'
 import Nav from './components/Nav'
-
+import Footer from './components/Footer'
 import './App.css';
 
 class App extends Component {
@@ -108,7 +108,7 @@ class App extends Component {
             }} />
           </Switch>
         </div>
-
+            <Footer />
       </Router>
 
     )

@@ -78,7 +78,7 @@ class NewComment extends Component {
 
     render() {
         return (
-            <div>
+            <div className='new-comment'>
                 <form onSubmit={this.onSubmit}>
                     {/* <textarea 
                         value={this.state.content}

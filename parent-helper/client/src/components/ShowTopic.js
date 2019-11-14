@@ -35,7 +35,7 @@ class ShowTopic extends Component {
         const posts = this.state.topic.posts
         // console.log(this.state.topic.id)
         return (
-            <div>
+            <div className='show-topic'>
                 <h1>{topic.subject}</h1>
                 {posts && posts.map(post => (
                 <div key={post.id}>

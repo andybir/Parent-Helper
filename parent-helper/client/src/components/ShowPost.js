@@ -28,7 +28,7 @@ class ShowPost extends Component {
         // const posts = this.state.topic.posts
         console.log(comment)
         return (
-            <div>
+            <div className='show-post'>
                 <h1>{post.title}</h1>
                 <h2>{post.content}</h2>
                 {comment.map(comment => (
