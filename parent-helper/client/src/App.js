@@ -38,7 +38,6 @@ class App extends Component {
   }
 
   setPost = (post) => {
-    console.log("checking for post: ", post)
     this.setState({
       currentPost: post
     })

@@ -37,15 +37,18 @@ class ShowTopic extends Component {
         return (
             <div className='show-topic'>
                 <h1>{topic.subject}</h1>
+
                 {posts && posts.map(post => (
-                <div key={post.id}>
+                <div className='post-click' key={post.id}>
                     <Link to={`/topics/${topic.id}/posts/${post.id}`}
                         onClick={() => this.props.setPost(post)}>
                     <h2>{post.title}</h2>
-                    <p>{post.content}</p>      
+                    <p>{post.content}</p> 
                     </Link>
                 </div>
+                
                 ))}
+
             </div>
         )
     }

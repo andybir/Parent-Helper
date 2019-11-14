@@ -17,9 +17,12 @@ class AllTopics extends Component {
             <div className='all-topics' key={topic.id}>
                 <Link to={`/topics/${topic.id}`} 
                     onClick={() => this.props.setTopic(topic)}>
+                    <div className='topic-click'>
                     <h2>{topic.subject}</h2>
                     <p>{topic.description}</p>
+                    </div>
                 </Link>
+
                 {/* <hr /> */}
             </div>
         ))

@@ -11,12 +11,12 @@ class ShowPost extends Component {
     }
 
     async componentDidMount() {
-        const idParams = this.props.match.params.id
+        const idParams = this.props.data.match.params.id
         // console.log(this.props)
        
         if (this.props.currentTopic.id !== idParams) {
             // console.log(this.props)
-            const topicData = await axios(`http://localhost:3000/topics/${this.props.data.match.params.id}`)
+            const topicData = await axios(`http://localhost:3000/topics/${idParams}`)
             this.setState(this.state.topic = topicData.data)
             // console.log(this.props.data.match.params.id)
         }
@@ -32,7 +32,7 @@ class ShowPost extends Component {
                 <h1>{post.title}</h1>
                 <h2>{post.content}</h2>
                 {comment.map(comment => (
-                    <div key={comment.id}>
+                    <div className='comment' key={comment.id}>
                     <h3>{comment.title}</h3>
                     <p>{comment.content}</p>
                     </div>    
