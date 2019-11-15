@@ -14,7 +14,7 @@ class TopicsController < ApplicationController
                 :posts => { 
                     :only => [:id, :title, :content], :include => {
                         :comments => {
-                            :only => [:id, :title, :content]}
+                            :only => [:id, :title, :content, :created_at]}
                     }
                 }
             })

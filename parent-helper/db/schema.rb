@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2019_11_07_180825) do
     t.string "title"
     t.text "content"
     t.string "subject"
-    t.bigint "user_id", null: false
+    t.bigint "user_id", null: true
     t.bigint "topic_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -5,8 +5,10 @@ import Home from './components/Home'
 import AllTopics from './components/AllTopics'
 import ShowTopic from './components/ShowTopic'
 import ShowPost from './components/ShowPost'
+import CreatePost from './components/CreatePost'
+import ShowComment from './components/ShowComment'
 import Nav from './components/Nav'
-
+import Footer from './components/Footer'
 import './App.css';
 
 class App extends Component {
@@ -18,10 +20,18 @@ class App extends Component {
       posts: [],
       currentPost: {},
       topicLoaded: false,
-      currentComment: {}
+      currentComment: {},
+      users: [],
+      currentUser: {},
+      user: {}
+
     }
   }
 
+async componentDidMount () {
+  const userData = await axios(`http://localhost:3000/users/1`)
+  this.setState(this.state.user = userData.data)
+}
   getAllTopics = () => {
     axios('http://localhost:3000/topics').then(jsonRes => {
       this.setState({
@@ -30,6 +40,15 @@ class App extends Component {
       })
     })
   }
+  getUser = () => {
+    axios('http://localhost:3000/users/1').then(jsonRes => {
+      this.setState({
+        users: jsonRes.data.users,
+        usersLoaded: true
+      })
+    })
+  }
+
 
   setTopic = (topic) => {
     this.setState({
@@ -38,7 +57,6 @@ class App extends Component {
   }
 
   setPost = (post) => {
-    console.log("checking for post: ", post)
     this.setState({
       currentPost: post
     })
@@ -49,11 +67,16 @@ class App extends Component {
       currentComment: comment
     })
   }
+  setUser = (user) => {
+    this.setState({
+      currentUser: user
+    })
+  }
 
   
 
   render () {
-    console.log(this.state.posts)
+    // console.log(this.state.user)
     
     return (
 
@@ -65,6 +88,7 @@ class App extends Component {
             Parent Helper
           </Link> */}
           <Switch>
+          <main>
             <Route exact path='/' component={Home} />
             <Route exact path='/topics' render={() => (
               <AllTopics
@@ -82,6 +106,7 @@ class App extends Component {
               setTopic={this.setTopic}
               setPost={this.setPost}
               posts={this.state.posts}
+              currentUser={this.state.user}
               {...props} />
             }}/>
             <Route exact path='/topics/:id/posts/:id' render={(props) => {
@@ -94,6 +119,7 @@ class App extends Component {
               setTopic={this.setTopic}
               setPost={this.setPost}
               posts={this.state.posts}
+              currentComment={this.currentComment}
               {...props}
                 // data={props}
                 // getAllTopics={this.getAllTopics}
@@ -106,9 +132,21 @@ class App extends Component {
                 // {...props} 
                 />
             }} />
+            <Route exact path='/topics/:id/create-post'
+              component={CreatePost}
+              currentTopic={this.state.currentTopic}
+              currentUser={this.state.currentUser}
+            />
+            <Route exact path='/posts/:id/comments/:id'
+              component={ShowComment}
+              data={this.props}
+              currentPost={this.currentPost}
+              currentComment={this.currentComment}
+            />
+            </main>
           </Switch>
         </div>
-
+            <Footer />
       </Router>
 
     )

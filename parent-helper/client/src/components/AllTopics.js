@@ -12,17 +12,25 @@ class AllTopics extends Component {
 
 
     render () {
-        console.log(this.props.topics)
-        return this.props.topics.map(topic => (
-            <div key={topic.id}>
+        // console.log(this.props.topics)
+        return( 
+        <div className='all-topics'>
+            <h1>Topics</h1>
+            {this.props.topics.map(topic => (
+            <div  key={topic.id}>
                 <Link to={`/topics/${topic.id}`} 
                     onClick={() => this.props.setTopic(topic)}>
+                    <div className='topic-click'>
                     <h2>{topic.subject}</h2>
                     <p>{topic.description}</p>
+                    </div>
+                    
                 </Link>
-                <hr />
+
             </div>
-        ))
+        ))}
+        </div>
+        )
     }
 }
 
