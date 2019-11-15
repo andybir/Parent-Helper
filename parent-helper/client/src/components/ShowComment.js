@@ -7,27 +7,20 @@ import TextField from '@material-ui/core/TextField'
 import { makeStyles } from '@material-ui/core/styles';
 
 function ShowComment (props) {
-    const [formValue, setFormValue] = useState('')
-    const [nameValue, setNameValue] = useState('')
-    
+
+    const handleDeleteComment = async () => {
+        const idParams = props.match.params.id
+
+        const deleted = await axios.delete(`http://localhost:3000/comments/${idParams}/`)
+        // props.handleDeleteComment(props.currentComment)
+        // props.history.push('/')
+        console.log(deleted)
+        alert.show('Comment deleted!')
+
+    }
+
     const alert = useAlert()
 
-    const componentDidMount = async () => {
-        
-    }
-
-    const onSubmit = async (e) => {
-        e.preventDefault()
-        // alert("Comment submitted!")
-        const res = await axios.post(`http://localhost:3000/posts/${props.currentPost}/comments/${props.currentComment}`, {title: nameValue, content: formValue})
-
-        
-
-        // const comment = res.data.comment
-        // window.location = "http://www.google.com"
-        // this.props.setComment(comment)
-        // console.log(res.data)
-    }
 
     const useStyles = makeStyles(theme => ({
         container: {
@@ -40,20 +33,18 @@ function ShowComment (props) {
         //   width: 200,
         },
     }));
-    console.log(props)
+    console.log(props.match.params.id)
         return (
             
-            <div className='show-comment'>
-                {/* <h1>{comment.title}</h1>
-                <h2>{comment.content}</h2> */}
-                
-                
+            <div className='delete-comment'>
+                <p>comment</p>
                     <Button 
                         variant='outlined'
-                        className='comment-submit-button'
+                        className='comment-delete-button'
                         type='submit' 
-                        onClick={() => {alert.show('Comment submitted!')}}>
-                        Submit
+                        onClick={() => {
+                            handleDeleteComment() }}>
+                        delete comment
                     </Button>
             </div>
         )

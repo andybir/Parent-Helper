@@ -137,7 +137,8 @@ async componentDidMount () {
               currentTopic={this.state.currentTopic}
               currentUser={this.state.currentUser}
             />
-            <Route exact path='/post/:id/comments/:id'
+            <Route exact path='/posts/:id/comments/:id'
+              data={this.props}
               component={ShowComment}
               currentPost={this.currentPost}
               currentComment={this.currentComment}

@@ -8,9 +8,17 @@ class ShowPost extends Component {
     constructor() {
         super()
         this.state = {
-            topic: {}
+            topic: {},
+            comments: [],
+            currentComment: {}
         }
     }
+
+    setComment = (comment) => {
+        this.setState({
+          currentComment: comment
+        })
+      }
 
     async componentDidMount() {
         const idParams = this.props.data.match.params.id
@@ -31,7 +39,7 @@ class ShowPost extends Component {
         const post = this.props.currentPost
         const comment = this.props.currentPost.comments
         // const posts = this.state.topic.posts
-        // console.log(this.props)
+        console.log(this.props)
         return (
             <div className='show-post'>
                 <h1>{post.title}</h1>
@@ -44,7 +52,10 @@ class ShowPost extends Component {
                     <h3>{`On ${comment.created_at}`}</h3>
                     <h3>{`${comment.title} wrote:`}</h3>
                     <p>{comment.content}</p>
-                    <DeleteComment />
+                    {/* <DeleteComment 
+                        data={this.props}
+                        currentComment={this.currentComment}
+                    /> */}
                     </Link>
                     </div>    
                 ))}

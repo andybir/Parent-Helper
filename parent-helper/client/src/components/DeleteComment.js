@@ -8,13 +8,17 @@ import { makeStyles } from '@material-ui/core/styles';
 
 function DeleteComment (props) {
 
-    const handleDelete = async () => {
-        const idParams = this.props.data.match.params.id
+    const handleDeleteComment = async () => {
+        const idParams = props.data.match.params.id
+        console.log(idParams)
 
-        await axios.delete(`http://localhost3000/topics/${idParams}/comment/${idParams}`)
-        this.props.handleDeleteTeacher(this.props.currentTeacher)
-        this.props.history.push('/')
+        await axios.delete(`http://localhost3000/posts/${idParams}/comment/`)
+        props.handleDeleteComment(props.currentComment)
+        props.history.push('/')
     }
+
+    const alert = useAlert()
+
 
     const useStyles = makeStyles(theme => ({
         container: {
@@ -27,21 +31,16 @@ function DeleteComment (props) {
         //   width: 200,
         },
     }));
-    console.log(props)
+    console.log(props.data)
         return (
             
-            <div className='show-comment'>
-                {/* <h1>{comment.title}</h1>
-                <h2>{comment.content}</h2> */}
-                
-                
+            <div className='delete-comment'>
                     <Button 
                         variant='outlined'
-                        className='comment-submit-button'
+                        className='comment-delete-button'
                         type='submit' 
-                        onClick={handleDelete}
-
-                        onClick={() => {alert.show('Comment submitted!')}}>
+                        onClick={handleDeleteComment}
+                        onClick={() => {alert.show('Comment deleted!')}}>
                         delete comment
                     </Button>
             </div>
