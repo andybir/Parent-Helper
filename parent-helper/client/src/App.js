@@ -6,6 +6,7 @@ import AllTopics from './components/AllTopics'
 import ShowTopic from './components/ShowTopic'
 import ShowPost from './components/ShowPost'
 import CreatePost from './components/CreatePost'
+import ShowComment from './components/ShowComment'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import './App.css';
@@ -75,7 +76,7 @@ async componentDidMount () {
   
 
   render () {
-    console.log(this.state.user)
+    // console.log(this.state.user)
     
     return (
 
@@ -135,6 +136,11 @@ async componentDidMount () {
               component={CreatePost}
               currentTopic={this.state.currentTopic}
               currentUser={this.state.currentUser}
+            />
+            <Route exact path='/post/:id/comments/:id'
+              component={ShowComment}
+              currentPost={this.currentPost}
+              currentComment={this.currentComment}
             />
             </main>
           </Switch>

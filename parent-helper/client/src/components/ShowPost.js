@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import NewComment from './NewComment'
+import DeleteComment from './DeleteComment'
 
 class ShowPost extends Component {
     constructor() {
@@ -24,19 +25,13 @@ class ShowPost extends Component {
         }
     }
     
-    handleDelete = async () => {
-        const idParams = this.props.data.match.params.id
-
-        await axios.delete(`http://localhost3000/topics/${idParams}/comment/${idParams}`)
-        this.props.handleDeleteTeacher(this.props.currentTeacher)
-        this.props.history.push('/')
-    }
+    
 
     render () {
         const post = this.props.currentPost
         const comment = this.props.currentPost.comments
         // const posts = this.state.topic.posts
-        console.log(this.props)
+        // console.log(this.props)
         return (
             <div className='show-post'>
                 <h1>{post.title}</h1>
@@ -49,8 +44,8 @@ class ShowPost extends Component {
                     <h3>{`On ${comment.created_at}`}</h3>
                     <h3>{`${comment.title} wrote:`}</h3>
                     <p>{comment.content}</p>
+                    <DeleteComment />
                     </Link>
-                    <button onClick={this.handleDelete}>delete comment</button>
                     </div>    
                 ))}
                 <NewComment

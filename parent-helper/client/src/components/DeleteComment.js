@@ -6,27 +6,14 @@ import { useAlert } from 'react-alert'
 import TextField from '@material-ui/core/TextField'
 import { makeStyles } from '@material-ui/core/styles';
 
-function ShowComment (props) {
-    const [formValue, setFormValue] = useState('')
-    const [nameValue, setNameValue] = useState('')
-    
-    const alert = useAlert()
+function DeleteComment (props) {
 
-    const componentDidMount = async () => {
-        
-    }
+    const handleDelete = async () => {
+        const idParams = this.props.data.match.params.id
 
-    const onSubmit = async (e) => {
-        e.preventDefault()
-        // alert("Comment submitted!")
-        const res = await axios.post(`http://localhost:3000/posts/${props.currentPost}/comments/${props.currentComment}`, {title: nameValue, content: formValue})
-
-        
-
-        // const comment = res.data.comment
-        // window.location = "http://www.google.com"
-        // this.props.setComment(comment)
-        // console.log(res.data)
+        await axios.delete(`http://localhost3000/topics/${idParams}/comment/${idParams}`)
+        this.props.handleDeleteTeacher(this.props.currentTeacher)
+        this.props.history.push('/')
     }
 
     const useStyles = makeStyles(theme => ({
@@ -52,12 +39,14 @@ function ShowComment (props) {
                         variant='outlined'
                         className='comment-submit-button'
                         type='submit' 
+                        onClick={handleDelete}
+
                         onClick={() => {alert.show('Comment submitted!')}}>
-                        Submit
+                        delete comment
                     </Button>
             </div>
         )
     
 }
 
-export default ShowComment
+export default DeleteComment

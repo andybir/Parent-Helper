@@ -35,7 +35,7 @@ function CreatePost (props) {
         //   width: 200,
         },
     }));
-    console.log(props.currentUser)
+    // console.log(props.currentUser)
     // console.log(props)
     
         return (

@@ -31,11 +31,11 @@ class ShowTopic extends Component {
     //   }
 
     render() {
-        console.log(this.props)
+        // console.log(this.props)
         const topic = this.state.topic
         const posts = this.state.topic.posts
         const user = this.props.currentUser
-        console.log(user)
+        // console.log(user)
         return (
             <div className='show-topic'>
                 <div className='topic-nav'>

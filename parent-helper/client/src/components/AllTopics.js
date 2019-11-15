@@ -12,7 +12,7 @@ class AllTopics extends Component {
 
 
     render () {
-        console.log(this.props.topics)
+        // console.log(this.props.topics)
         return( 
         <div className='all-topics'>
             <h1>Topics</h1>
