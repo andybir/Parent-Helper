@@ -21,10 +21,16 @@ class App extends Component {
       topicLoaded: false,
       currentComment: {},
       users: [],
-      currentUser: {}
+      currentUser: {},
+      user: {}
+
     }
   }
 
+async componentDidMount () {
+  const userData = await axios(`http://localhost:3000/users/1`)
+  this.setState(this.state.user = userData.data)
+}
   getAllTopics = () => {
     axios('http://localhost:3000/topics').then(jsonRes => {
       this.setState({
@@ -33,6 +39,15 @@ class App extends Component {
       })
     })
   }
+  getUser = () => {
+    axios('http://localhost:3000/users/1').then(jsonRes => {
+      this.setState({
+        users: jsonRes.data.users,
+        usersLoaded: true
+      })
+    })
+  }
+
 
   setTopic = (topic) => {
     this.setState({
@@ -60,7 +75,7 @@ class App extends Component {
   
 
   render () {
-    console.log(this.state.posts)
+    console.log(this.state.user)
     
     return (
 
@@ -90,6 +105,7 @@ class App extends Component {
               setTopic={this.setTopic}
               setPost={this.setPost}
               posts={this.state.posts}
+              currentUser={this.state.user}
               {...props} />
             }}/>
             <Route exact path='/topics/:id/posts/:id' render={(props) => {
@@ -117,6 +133,7 @@ class App extends Component {
             <Route exact path='/topics/:id/create-post'
               component={CreatePost}
               currentTopic={this.state.currentTopic}
+              currentUser={this.state.currentUser}
             />
             </main>
           </Switch>

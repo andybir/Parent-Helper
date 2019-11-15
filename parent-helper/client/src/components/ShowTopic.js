@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 import CreatePost from './CreatePost'
 
 class ShowTopic extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
             topic: {}
         }
@@ -31,10 +31,11 @@ class ShowTopic extends Component {
     //   }
 
     render() {
-        console.log(this.state.topic)
+        console.log(this.props)
         const topic = this.state.topic
         const posts = this.state.topic.posts
-        // console.log(this.state.topic.id)
+        const user = this.props.currentUser
+        console.log(user)
         return (
             <div className='show-topic'>
                 <div className='topic-nav'>
@@ -55,6 +56,7 @@ class ShowTopic extends Component {
                 ))}
                 <CreatePost
                 currentTopic={topic.id} 
+                currentUser={user.id}
                  />
 
             </div>

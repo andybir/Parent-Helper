@@ -14,7 +14,7 @@ function CreatePost (props) {
     const onSubmit = async (e) => {
         e.preventDefault()
         // alert("Comment submitted!")
-        const res = await axios.post(`http://localhost:3000/topics/${props.currentTopic}/posts`, {title: nameValue, content: formValue})
+        const res = await axios.post(`http://localhost:3000/topics/${props.currentTopic}/posts`, {user_id: props.currentUser, title: nameValue, content: formValue})
 
         
 
@@ -35,7 +35,8 @@ function CreatePost (props) {
         //   width: 200,
         },
     }));
-    console.log(props.currentTopic)
+    console.log(props.currentUser)
+    // console.log(props)
     
         return (
             <div className='create-post'>
