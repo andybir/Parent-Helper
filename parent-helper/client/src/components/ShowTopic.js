@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
+import CreatePost from './CreatePost'
 
 class ShowTopic extends Component {
     constructor() {
@@ -36,8 +37,12 @@ class ShowTopic extends Component {
         // console.log(this.state.topic.id)
         return (
             <div className='show-topic'>
+                <div className='topic-nav'>
                 <h1>{topic.subject}</h1>
-
+                <Link to={`/topics/${topic.id}/create-post`}>
+                    <h2 className='home-click'>Create Post</h2>
+                </Link>
+                </div>
                 {posts && posts.map(post => (
                 <div className='post-click' key={post.id}>
                     <Link to={`/topics/${topic.id}/posts/${post.id}`}
@@ -48,6 +53,9 @@ class ShowTopic extends Component {
                 </div>
                 
                 ))}
+                <CreatePost
+                currentTopic={topic.id} 
+                 />
 
             </div>
         )

@@ -5,6 +5,7 @@ import Home from './components/Home'
 import AllTopics from './components/AllTopics'
 import ShowTopic from './components/ShowTopic'
 import ShowPost from './components/ShowPost'
+import CreatePost from './components/CreatePost'
 import Nav from './components/Nav'
 import Footer from './components/Footer'
 import './App.css';
@@ -18,7 +19,9 @@ class App extends Component {
       posts: [],
       currentPost: {},
       topicLoaded: false,
-      currentComment: {}
+      currentComment: {},
+      users: [],
+      currentUser: {}
     }
   }
 
@@ -46,6 +49,11 @@ class App extends Component {
   setComment = (comment) => {
     this.setState({
       currentComment: comment
+    })
+  }
+  setUser = (user) => {
+    this.setState({
+      currentUser: user
     })
   }
 
@@ -106,6 +114,10 @@ class App extends Component {
                 // {...props} 
                 />
             }} />
+            <Route exact path='/topics/:id/create-post'
+              component={CreatePost}
+              currentTopic={this.state.currentTopic}
+            />
             </main>
           </Switch>
         </div>

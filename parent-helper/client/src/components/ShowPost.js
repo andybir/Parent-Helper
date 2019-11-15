@@ -27,12 +27,13 @@ class ShowPost extends Component {
         const post = this.props.currentPost
         const comment = this.props.currentPost.comments
         // const posts = this.state.topic.posts
+        console.log(post)
         console.log(comment)
         return (
             <div className='show-post'>
                 <h1>{post.title}</h1>
                 <h2>{post.content}</h2>
-                {comment.map(comment => (
+                {comment && comment.map(comment => (
                     <div className='comment' key={comment.id}>
                     <h3>{`On ${comment.created_at}`}</h3>
                     <h3>{`${comment.title} wrote:`}</h3>
