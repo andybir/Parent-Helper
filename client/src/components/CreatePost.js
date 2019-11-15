@@ -48,11 +48,15 @@ function CreatePost (props) {
                         value={nameValue}
                         name='name'
                         onChange={(e) => setNameValue(e.target.value)}
-                        label='Post Title'
+                        label='Subject'
                         placeholder='Enter text...'
                         className='name-box'
                         margin='normal'
                         variant='outlined'
+                        inputProps={{
+                            
+                            autoComplete: 'disabled', // disable autocomplete and autofill
+                          }}
                     />
                     <TextField
                         value={formValue}
@@ -65,6 +69,10 @@ function CreatePost (props) {
                         className='comment-box'
                         margin="normal"
                         variant="outlined"
+                        inputProps={{
+                            
+                            autoComplete: 'disabled', // disable autocomplete and autofill
+                          }}
                     />
                     <Button 
                         variant='outlined'

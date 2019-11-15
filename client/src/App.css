@@ -64,18 +64,39 @@ a:active {
 
 .home-img {
   margin: 30px;
-  border: solid red 10px;
+  border: solid rgb(161, 161, 247) 5px;
   border-radius: 15px;
   width: 80%;
 }
 
+.home-click {
+  background-color: rgb(240, 135, 202);
+  padding: 5px;
+  margin: 10px;
+  border: 2px solid;
+  border-radius: 8px;
+  /* width: 90%; */
+  /* align-content: center; */
+}
+
 /* MAIN COMPONENTS */
-.all-topics, .show-topic, .show-post, .create-post {
+.all-topics, .show-topic, .show-post, .create-post, .delete-comment {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
+  /* justify-content: center; */
   padding: 20px;
   background-color: rgb(218, 184, 132);
+}
+
+.all-topics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  padding: 20px;
+  background-color: rgb(218, 184, 132);
+  height: 100vh;
 }
 
 .topic-click {
