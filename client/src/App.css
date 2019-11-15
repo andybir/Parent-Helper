@@ -1,0 +1,181 @@
+.App {
+  font-family: 'Roboto', sans-serif;
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color: black;
+}
+
+a:hover {
+  color: lawngreen;
+}
+
+a:active {
+  color: cyan;
+}
+
+/* HEADER */
+.nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Finger Paint', cursive;
+  /* font-family: 'Lacquer', sans-serif; */
+  font-size: 30px;
+  height: 15vh;
+  background-color: rgb(161, 161, 247);
+}
+
+.nav-title {
+  height: auto;
+}
+
+/* FOOTER */
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background-color: rgb(161, 161, 247);
+  margin: rgb(161, 161, 247);
+  height: 10vh;
+
+}
+
+.footer-p {
+  padding: 5px;
+  margin: 0px;
+}
+
+/* HOME */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  background-color: rgb(218, 184, 132);
+}
+
+.home-img {
+  margin: 30px;
+  border: solid red 10px;
+  border-radius: 15px;
+  width: 80%;
+}
+
+/* MAIN COMPONENTS */
+.all-topics, .show-topic, .show-post, .create-post {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: rgb(218, 184, 132);
+}
+
+.topic-click {
+  background-color: rgb(240, 135, 202);
+  padding: 5px;
+  border: 2px solid;
+  width: 550px;
+}
+
+.post-click {
+  background-color: rgb(240, 135, 202);
+  padding: 5px;
+  margin: 10px;
+  border: 2px solid;
+  width: 550px;
+}
+
+.comment {
+  background-color: rgb(240, 135, 202);
+  padding: 5px;
+  margin: 10px;
+  border: 2px solid;
+  width: 550px;
+}
+
+.comment-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.name-box {
+  width: 500px;
+}
+
+.comment-box {
+  width: 500px;
+
+}
+
+.comment-button {
+
+}
+
+@media screen and (max-width: 415px) {
+  .home {
+    height: 75vmax;
+  }
+  
+  .nav {
+    font-size: 20px;
+  }
+  
+  .all-topics, .show-topic, .show-post, .delete-comment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background-color: rgb(218, 184, 132);
+    height: auto;
+
+  }
+
+  .topic-click, .post-click {
+    background-color: rgb(240, 135, 202);
+    padding: 5px;
+    margin: 10px;
+    border: 2px solid;
+    width: 90%;
+  }
+
+  .home-links {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+  .home-click {
+    background-color: rgb(240, 135, 202);
+    padding: 5px;
+    margin: 10px;
+    border: 2px solid;
+    border-radius: 8px;
+    /* width: 90%; */
+    /* align-content: center; */
+  }
+  
+  .comment {
+    background-color: rgb(240, 135, 202);
+    padding: 5px;
+    margin: 10px;
+    border: 2px solid;
+    width: 90%;
+  }
+
+  .name-box {
+    width: 90%;
+  }
+
+  .comment-box {
+    width: 90%
+  }
+}
