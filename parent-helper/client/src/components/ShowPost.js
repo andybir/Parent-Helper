@@ -48,7 +48,7 @@ class ShowPost extends Component {
                 {comment && comment.map(comment => (
                     <div className='comment' key={comment.id}>
                     <Link to={`/posts/${post.id}/comments/${comment.id}`}
-                        onClick={() => this.props.setPost(post)}>
+                        onClick={() => this.setComment(comment)}>
                     <h3>{`On ${comment.created_at}`}</h3>
                     <h3>{`${comment.title} wrote:`}</h3>
                     <p>{comment.content}</p>

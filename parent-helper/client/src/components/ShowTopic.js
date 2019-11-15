@@ -40,9 +40,9 @@ class ShowTopic extends Component {
             <div className='show-topic'>
                 <div className='topic-nav'>
                 <h1>{topic.subject}</h1>
-                <Link to={``}>
+                {/* <Link to={``}>
                     <h2 className='home-click'>Create Post</h2>
-                </Link>
+                </Link> */}
                 </div>
                 {posts && posts.map(post => (
                 <div className='post-click' key={post.id}>

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import Button from '@material-ui/core/Button';
 import { useAlert } from 'react-alert'
-
+import { Link } from 'react-router-dom'
 import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 import ThreeDRotation from '@material-ui/icons/ThreeDRotation';
 
@@ -46,6 +46,7 @@ function NewComment (props) {
     
         return (
             <div className='comment-container'>
+                <h2>Add comment</h2>
                 <form onSubmit={onSubmit}>
                     <TextField
                         value={nameValue}
@@ -76,6 +77,7 @@ function NewComment (props) {
                         onClick={() => {alert.show('Comment submitted!')}}>
                         Submit
                     </Button>
+                    <Link to='/topics'><Button variant='outlined'>back to topics</Button></Link>
                 </form>
             </div>
         )
