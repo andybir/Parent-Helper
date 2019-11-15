@@ -40,7 +40,7 @@ class ShowTopic extends Component {
             <div className='show-topic'>
                 <div className='topic-nav'>
                 <h1>{topic.subject}</h1>
-                <Link to={`/topics/${topic.id}/create-post`}>
+                <Link to={``}>
                     <h2 className='home-click'>Create Post</h2>
                 </Link>
                 </div>

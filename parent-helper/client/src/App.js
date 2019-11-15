@@ -118,6 +118,7 @@ async componentDidMount () {
               setTopic={this.setTopic}
               setPost={this.setPost}
               posts={this.state.posts}
+              currentComment={this.currentComment}
               {...props}
                 // data={props}
                 // getAllTopics={this.getAllTopics}
