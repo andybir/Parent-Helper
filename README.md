@@ -79,6 +79,7 @@ Based on the initial logic defined in the previous sections try and breakdown th
 ## Additional Libraries
  
 | Library | What it Does | 
+| --- | :---: |
 | material-ui | allows for importing clean forms with simple animations |  
 | react-alert | allows for nicely styled button pop up alerts |  
 
