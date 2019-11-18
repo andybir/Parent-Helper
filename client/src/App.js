@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './components/Home'
 import AllTopics from './components/AllTopics'
 import ShowTopic from './components/ShowTopic'
@@ -49,7 +49,6 @@ async componentDidMount () {
     })
   }
 
-
   setTopic = (topic) => {
     this.setState({
       currentTopic: topic
@@ -73,20 +72,11 @@ async componentDidMount () {
     })
   }
 
-  
-
   render () {
-    // console.log(this.state.user)
-    
     return (
-
       <Router>
-
         <Nav />
         <div className="App">
-          {/* <Link exact='true' to='/'>
-            Parent Helper
-          </Link> */}
           <Switch>
           <main>
             <Route exact path='/' component={Home} />
@@ -121,16 +111,7 @@ async componentDidMount () {
               posts={this.state.posts}
               currentComment={this.currentComment}
               {...props}
-                // data={props}
-                // getAllTopics={this.getAllTopics}
-                // topics={this.state.topics}
-                // currentTopic={this.state.currentTopic}
-                // setTopic={this.setTopic}
-                // setPost={this.setPost}
-                // posts={this.state.posts}
-                // currentPost={currentPost}
-                // {...props} 
-                />
+              />
             }} />
             <Route exact path='/topics/:id/create-post'
               component={CreatePost}
@@ -146,9 +127,8 @@ async componentDidMount () {
             </main>
           </Switch>
         </div>
-            <Footer />
+        <Footer />
       </Router>
-
     )
   }
 }

@@ -13,36 +13,23 @@ class ShowTopic extends Component {
 
     async componentDidMount() {
         const idParams = this.props.match.params.id
-        // console.log(this.props)
 
         if (this.props.currentTopic.id !== idParams) {
             const topicId = this.props.data.match.params.id
             const topicData = await axios(`http://localhost:3000/topics/${topicId}`)
             this.setState(this.state.topic = topicData.data)
-            // console.log(topicData)
         }
 
     }
 
-    // getAllPosts = () => {
-    //     const idParams = this.props.match.params.id
-    //     console.log(idParams)
-    //     axios(`http://localhost:3000/topics/${idParams}`)
-    //   }
-
     render() {
-        // console.log(this.props)
         const topic = this.state.topic
         const posts = this.state.topic.posts
         const user = this.props.currentUser
-        // console.log(user)
         return (
             <div className='show-topic'>
                 <div className='topic-nav'>
-                <h1>{topic.subject}</h1>
-                {/* <Link to={``}>
-                    <h2 className='home-click'>Create Post</h2>
-                </Link> */}
+                    <h1>{topic.subject}</h1>
                 </div>
                 {posts && posts.map(post => (
                 <div className='post-click' key={post.id}>
@@ -52,13 +39,11 @@ class ShowTopic extends Component {
                     <p>{post.content}</p> 
                     </Link>
                 </div>
-                
                 ))}
                 <CreatePost
-                currentTopic={topic.id} 
-                currentUser={user.id}
-                 />
-
+                    currentTopic={topic.id} 
+                    currentUser={user.id}
+                />
             </div>
         )
     }
