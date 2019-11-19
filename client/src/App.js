@@ -29,11 +29,11 @@ class App extends Component {
   }
 
 async componentDidMount () {
-  const userData = await axios(`http://localhost:3000/users/1`)
+  const userData = await axios(`/users/1`)
   this.setState(this.state.user = userData.data)
 }
   getAllTopics = () => {
-    axios('http://localhost:3000/topics').then(jsonRes => {
+    axios('/topics').then(jsonRes => {
       this.setState({
         topics: jsonRes.data.topics,
         topicsLoaded: true
@@ -41,7 +41,7 @@ async componentDidMount () {
     })
   }
   getUser = () => {
-    axios('http://localhost:3000/users/1').then(jsonRes => {
+    axios('/users/1').then(jsonRes => {
       this.setState({
         users: jsonRes.data.users,
         usersLoaded: true
