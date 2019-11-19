@@ -13,7 +13,7 @@ function CreatePost (props) {
 
     const onSubmit = async (e) => {
         e.preventDefault()
-        const res = await axios.post(`http://localhost:3000/topics/${props.currentTopic}/posts`, {user_id: props.currentUser, title: nameValue, content: formValue})
+        const res = await axios.post(`/topics/${props.currentTopic}/posts`, {user_id: props.currentUser, title: nameValue, content: formValue})
 
         // const comment = res.data.comment
         // window.location = "http://www.google.com"

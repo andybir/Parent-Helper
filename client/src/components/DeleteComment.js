@@ -12,7 +12,7 @@ function DeleteComment (props) {
         const idParams = props.data.match.params.id
         console.log(idParams)
 
-        await axios.delete(`http://localhost3000/posts/${idParams}/comment/`)
+        await axios.delete(`/posts/${idParams}/comment/`)
         props.handleDeleteComment(props.currentComment)
         props.history.push('/')
     }

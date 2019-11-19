@@ -9,7 +9,7 @@ function ShowComment (props) {
     const handleDeleteComment = async () => {
         const idParams = props.match.params.id
 
-        const deleted = await axios.delete(`http://localhost:3000/comments/${idParams}/`)
+        const deleted = await axios.delete(`/comments/${idParams}/`)
         // props.handleDeleteComment(props.currentComment)
         // props.history.push('/')
         console.log(deleted)
@@ -20,7 +20,7 @@ function ShowComment (props) {
     const componentDidMount = async () => {
         const idParams = props.match.params.id
 
-        const currentComment = await axios(`http://localhost:3000/comments/${idParams}/`)
+        const currentComment = await axios(`/comments/${idParams}/`)
         console.log(currentComment)
 
     }
