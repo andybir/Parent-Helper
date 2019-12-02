@@ -18,7 +18,7 @@ function NewComment (props) {
     const onSubmit = async (e) => {
         e.preventDefault()
         // alert("Comment submitted!")
-        const res = await axios.post(`/posts/${props.currentPost}/comments`, {title: nameValue, content: formValue})
+        const res = await axios.post(`http://localhost:3000/posts/${props.currentPost}/comments`, {title: nameValue, content: formValue})
 
     }
     
