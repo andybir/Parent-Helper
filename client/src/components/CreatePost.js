@@ -3,7 +3,7 @@ import axios from 'axios'
 import Button from '@material-ui/core/Button';
 import { useAlert } from 'react-alert'
 import TextField from '@material-ui/core/TextField'
-import { makeStyles } from '@material-ui/core/styles';
+import { Link } from 'react-router-dom'
 
 function CreatePost (props) {
     const [formValue, setFormValue] = useState('')
@@ -12,7 +12,7 @@ function CreatePost (props) {
     const alert = useAlert()
 
     const onSubmit = async (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         const res = await axios.post(`http://localhost:3000/topics/${props.currentTopic}/posts`, {user_id: props.currentUser, title: nameValue, content: formValue})
 
         // const comment = res.data.comment
@@ -61,6 +61,14 @@ function CreatePost (props) {
                     }}>
                     Create
                 </Button>
+                <Link to='/topics'>
+                    <Button 
+                    variant='outlined'
+                    className='comment-submit-button'
+                    type='submit'>
+                    Back to Topics
+                    </Button>
+                </Link>
             </form>
         </div>
     )

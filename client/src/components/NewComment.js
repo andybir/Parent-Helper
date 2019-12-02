@@ -17,7 +17,6 @@ function NewComment (props) {
 
     const onSubmit = async (e) => {
         e.preventDefault()
-        // alert("Comment submitted!")
         const res = await axios.post(`http://localhost:3000/posts/${props.currentPost}/comments`, {title: nameValue, content: formValue})
 
     }
@@ -55,7 +54,9 @@ function NewComment (props) {
                     onClick={() => {alert.show('Comment submitted!')}}>
                     Submit
                 </Button>
-                <Link to='/topics'><Button variant='outlined'>back to topics</Button></Link>
+                <Link to='/topics'>
+                    <Button variant='outlined'>back to topics</Button>
+                </Link>
             </form>
         </div>
     )
