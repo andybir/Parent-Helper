@@ -22,7 +22,7 @@ class ShowPost extends Component {
     async componentDidMount() {
         const idParams = this.props.data.match.params.id
         if (this.props.currentTopic.id !== idParams) {
-            const topicData = await axios(`http://localhost:3000/topics/${idParams}`)
+            const topicData = await axios(`/topics/${idParams}`)
             this.setState(this.state.topic = topicData.data)
             
         }
