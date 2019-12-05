@@ -38,7 +38,7 @@ class ShowTopic extends Component {
                     </Button>
                 </Link>
                 <div className='topic-nav'>
-                    <h1>{topic.subject}</h1>
+                    <h1>{`Topic: ${topic.subject}`}</h1>
                 </div>
                 {posts && posts.map(post => (
                 <div className='post-click' key={post.id}>
