@@ -33,7 +33,7 @@ class ShowPost extends Component {
         const comment = this.props.currentPost.comments
         return (
             <div className='show-post'>
-                <h1>{post.title}</h1>
+                <h1>{`Post: ${post.title}`}</h1>
                 <h2>{post.content}</h2>
                 {comment && comment.map(comment => (
                     <div className='comment' key={comment.id}>

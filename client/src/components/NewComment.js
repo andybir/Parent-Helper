@@ -24,7 +24,7 @@ function NewComment (props) {
     return (
         <div className='comment-container'>
             <h2>Add comment</h2>
-            <form onSubmit={onSubmit}>
+            <form className='form' onSubmit={onSubmit}>
                 <TextField
                     value={nameValue}
                     name='name'
