@@ -55,7 +55,10 @@ function NewComment (props) {
                     Submit
                 </Button>
                 <Link to='/topics'>
-                    <Button variant='outlined'>back to topics</Button>
+                    <Button 
+                    variant='outlined'
+                    className='comment-submit-button'
+                    >back to topics</Button>
                 </Link>
             </form>
         </div>

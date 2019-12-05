@@ -84,7 +84,6 @@ a:active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
   padding: 20px;
   background-color: rgb(218, 184, 132);
 }
@@ -93,7 +92,6 @@ a:active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* justify-content: center; */
   padding: 20px;
   background-color: rgb(218, 184, 132);
   height: 100vh;
@@ -180,10 +178,10 @@ a:active {
     margin: 10px;
     border: 2px solid;
     border-radius: 8px;
-    /* width: 90%; */
-    /* align-content: center; */
   }
-  
+  .form {
+
+  }
   .comment {
     background-color: rgb(240, 135, 202);
     padding: 5px;
@@ -198,5 +196,9 @@ a:active {
 
   .comment-box {
     width: 90%
+  }
+  .comment-submit-button, .name-box, .comment-box{
+    width: 100%;
+    /* padding: 0 0 0 10px; */
   }
 }

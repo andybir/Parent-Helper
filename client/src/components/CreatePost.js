@@ -23,7 +23,7 @@ function CreatePost (props) {
     return (
         <div className='create-post'>
             <h1>Create Post</h1>
-            <form onSubmit={onSubmit}>
+            <form className='form' onSubmit={onSubmit}>
                 <TextField
                     value={nameValue}
                     name='name'

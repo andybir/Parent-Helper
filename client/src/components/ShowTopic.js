@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import CreatePost from './CreatePost'
+import Button from '@material-ui/core/Button';
 
 class ShowTopic extends Component {
     constructor(props) {
@@ -28,6 +29,14 @@ class ShowTopic extends Component {
         const user = this.props.currentUser
         return (
             <div className='show-topic'>
+                <Link to='/topics'>
+                    <Button 
+                    variant='outlined'
+                    className='comment-submit-button'
+                    type='submit'>
+                    Back to Topics
+                    </Button>
+                </Link>
                 <div className='topic-nav'>
                     <h1>{topic.subject}</h1>
                 </div>
