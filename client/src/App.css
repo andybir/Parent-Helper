@@ -142,16 +142,14 @@ a:active {
 }
 .comment-submit-button, .name-box, .comment-box{
   width: 100%;
-  /* padding: 0 0 0 10px; */
-}
-
-.comment-button {
-
 }
 
 @media screen and (max-width: 415px) {
   .home {
-    height: 75vmax;
+    height: 100%;
+  }
+  .home-img {
+    width: 90%;
   }
   
   .nav {
@@ -164,9 +162,8 @@ a:active {
     align-items: center;
     justify-content: center;
     padding: 20px;
-    background-color: rgb(218, 184, 132);
+    background-color: rgb(201, 205, 228);
     height: auto;
-
   }
 
   .topic-click, .post-click {
@@ -190,7 +187,7 @@ a:active {
     border-radius: 8px;
   }
   .form {
-
+    width: 300px;
   }
   .comment {
     background-color: rgb(240, 135, 202);
@@ -209,6 +206,5 @@ a:active {
   }
   .comment-submit-button, .name-box, .comment-box{
     width: 100%;
-    /* padding: 0 0 0 10px; */
   }
 }
