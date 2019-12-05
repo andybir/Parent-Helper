@@ -10,6 +10,7 @@ User.create(username: "lauram", email: "lmariani123@gmail.com", password: "passw
 User.create(username: "birdieb", email: "birdieb@gmail.com", password: "password")
 
 puts "#{User.count} users created!"
+puts ""
 
 # Post.create(title: "Fun party", content: "Come to my fun part on Friday. It's going to be a blast!", subject: "Events", user_id: 1, topic_id: 2 )
 # Post.create(title: "Happy hour", content: "let's meet up at the bar to have some happy hour and celebrate the weekend!!!", subject: "Events", user_id: 1, topic_id: 1)
